@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Routelligence</string>
+    <string name="screen_title">Routelligence</string>
+    <string name="favorites_label">Ulubione miejsca</string>
+    <string name="routes_label">Proponowane trasy</string>
 </resources>

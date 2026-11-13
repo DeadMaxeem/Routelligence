@@ -17,8 +17,8 @@ enum class RoutePreferenceType {
 
 data class UserProfile(
     val id: String = "user-001",
-    val displayName: String = "Michał",
-    val email: String = "michal@example.com",
+    val displayName: String = "Użytkownik",
+    val email: String = "",
     val preferredMode: RouteMode = RouteMode.CAR,
     val routePreferenceType: RoutePreferenceType = RoutePreferenceType.FASTEST,
     val avoidTolls: Boolean = true,
@@ -38,6 +38,7 @@ data class FavoritePlace(
     val category: String = "favorite"
 )
 
+/** A route candidate. Numeric attributes are supplied by the routing provider. */
 data class RouteOption(
     val id: String,
     val title: String,
@@ -48,7 +49,14 @@ data class RouteOption(
     val trafficLevel: String,
     val color: Color,
     val isRecommended: Boolean = false,
-    val score: Int = 0
+    val score: Int = 0,
+    val distanceKm: Double = 0.0,
+    val durationMinutes: Int = 0,
+    val tollRoad: Boolean = false,
+    val highway: Boolean = false,
+    val scenicScore: Int = 0,
+    val comfortScore: Int = 0,
+    val trafficDelayMinutes: Int = 0
 )
 
 data class RoutePlanRequest(

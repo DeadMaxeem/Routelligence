@@ -24,7 +24,9 @@ data class UserProfile(
     val avoidTolls: Boolean = true,
     val avoidHighways: Boolean = false,
     val preferScenic: Boolean = false,
-    val weatherAware: Boolean = true
+    val weatherAware: Boolean = true,
+    val preferredDepartureTime: String = "08:30",
+    val preferredRouteColor: Color = Color(0xFF2E7D32)
 )
 
 data class FavoritePlace(
@@ -45,5 +47,17 @@ data class RouteOption(
     val etaLabel: String,
     val trafficLevel: String,
     val color: Color,
-    val isRecommended: Boolean = false
+    val isRecommended: Boolean = false,
+    val score: Int = 0
+)
+
+data class RoutePlanRequest(
+    val origin: String,
+    val destination: String,
+    val routeMode: RouteMode = RouteMode.CAR,
+    val routePreferenceType: RoutePreferenceType = RoutePreferenceType.FASTEST,
+    val avoidTolls: Boolean = false,
+    val avoidHighways: Boolean = false,
+    val preferScenic: Boolean = false,
+    val weatherAware: Boolean = false
 )
